@@ -68,7 +68,6 @@
   ruleset=🌍 非中国,[]GEOIP,!CN
   ruleset=🐟 漏网之鱼,[]FINAL
 
-
   ; ===================================================================
   ; 2. 策略组定义 (Proxy Groups) - 公司版手动选择架构
   ; ===================================================================
@@ -79,8 +78,7 @@
   custom_proxy_group=🇺🇸 US`select`(?i)(US|United States|美|America)
   custom_proxy_group=🐸 青蛙`select`(?i)FL-frog
   custom_proxy_group=🧩 速度`select`^(?!(?i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*
-  custom_proxy_group=🧩 Clean`select`^(?!(?i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*(?i)(US|
-  United States|美|America)`[]DIRECT`[]REJECT
+  custom_proxy_group=🧩 Clean`select`^(?!(?i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*(?i)(US|United States|美|America)`[]DIRECT`[]REJECT
   custom_proxy_group=⚡ CF手动`select`^(?i)cf -
 
   ; ---------------------------------------------------
@@ -90,8 +88,7 @@
   custom_proxy_group=🛜 流量`select`[]⚡ 流量手动`[]⚡ CF手动`[]🐸 青蛙`[]🧩 速度`[]🇺🇸 US
   custom_proxy_group=⚡ 手动候选`select`^(?!(?i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*
   custom_proxy_group=🎯 自定路由`select`[]🚀 节点选择`[]🇺🇸 US`[]🧩 速度`[]DIRECT`[]REJECT
-  custom_proxy_group=🚀 节点选择`select`[]🇺🇸 US`[]⚡ 手动候选`[]🧩 速度`[]🛜 流量`[]🧩 Clean`[]DIRECT`[]REJECT`^(?!(?
-  i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*
+  custom_proxy_group=🚀 节点选择`select`[]🇺🇸 US`[]⚡ 手动候选`[]🧩 速度`[]🛜 流量`[]🧩 Clean`[]DIRECT`[]REJECT`^(?!(?i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*
 
   ; ---------------------------------------------------
   ; [顶层] 应用规则路由
@@ -121,14 +118,12 @@
   ; --- 本地化服务与游戏 ---
   custom_proxy_group=🎮 Steam`select`[]DIRECT`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
   custom_proxy_group=🖥️ PC 游戏`select`[]DIRECT`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
-  custom_proxy_group=🏠 私有网络`select`[]DIRECT`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩
-  Clean`[]REJECT
+  custom_proxy_group=🏠 私有网络`select`[]DIRECT`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]REJECT
   custom_proxy_group=🔒 国内服务`select`[]DIRECT`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
 
   ; --- 兜底规则 ---
   custom_proxy_group=🌍 非中国`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT
-  custom_proxy_group=🐟 漏网之鱼`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩
-  Clean`[]DIRECT`[]REJECT
+  custom_proxy_group=🐟 漏网之鱼`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT`[]REJECT
 
   ; --- 转换器核心指令 ---
   enable_rule_generator=true
