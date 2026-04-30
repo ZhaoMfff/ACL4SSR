@@ -1,0 +1,135 @@
+[custom]
+
+  ; ===================================================================
+  ; 公司版：禁用主动测速与 fallback 自动切换，统一改为手动选择
+  ; ===================================================================
+
+  ; ===================================================================
+  ; 1. 规则集定义 (Rulesets) - 按业务类型精准抓取域名与 IP
+  ; ===================================================================
+
+  ; --- 自定义与开发环境 ---
+  ruleset=🎯 自定路由,[]DOMAIN-SUFFIX,linux.do
+  ruleset=🎯 自定路由,[]DOMAIN-SUFFIX,v2ex.com
+  ruleset=🎯 自定路由,[]DOMAIN-SUFFIX,serv00.net
+  ruleset=🎯 自定路由,[]DOMAIN-SUFFIX,serv00.com
+  ruleset=🎯 自定路由,[]DOMAIN-SUFFIX,dpdns.org
+
+  ; 开发工具扩展：包含 Maven 仓库等后端常用拉包地址
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,maven.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,mvnrepository.com
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,maven.apache.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,registry.npmjs.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,npmjs.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,nodejs.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,pypi.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,pythonhosted.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,files.pythonhosted.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,proxy.golang.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,sum.golang.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,go.dev
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,golang.org
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,docker.io
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,registry-1.docker.io
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,auth.docker.io
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,ghcr.io
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,quay.io
+  ruleset=🛠️ 开发工具,[]DOMAIN-SUFFIX,mcr.microsoft.com
+
+  ; --- 核心拦截与节点选择 ---
+  ruleset=🛑 广告拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+  ruleset=🚀 节点选择,[]DOMAIN,anyrouter.top
+  ruleset=DIRECT,[]DOMAIN,api.zscc.in
+  ruleset=🚀 节点选择,[]DOMAIN,zscc.in
+  ruleset=🚀 节点选择,[]DOMAIN,o.zscc.in
+  ruleset=🚀 节点选择,[]DOMAIN-SUFFIX,antigravity-unleash.goog
+
+  ; --- 基础服务订阅 ---
+  ruleset=✨ Gemini,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleGemini.list
+  ruleset=🤖 AI 服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
+  ruleset=🤖 AI 服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Claude.list
+  ruleset=Ⓜ️ 微软服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list
+  ruleset=🔍 谷歌服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list
+  ruleset=📹 油管视频,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
+  ruleset=☁️ 云服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Cloudflare.list
+  ruleset=🏠 私有网络,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+  ruleset=🔒 国内服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+  ruleset=🔒 国内服务,[]GEOIP,CN
+  ruleset=📲 电报消息,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+  ruleset=🐦 推特/X,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Twitter.list
+  ruleset=💬 其他社交,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/TikTok.list
+  ruleset=💬 其他社交,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Pixiv.list
+  ruleset=🎮 Steam,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list
+  ruleset=🖥️ PC 游戏,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
+  ruleset=🛠️ 开发工具,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list
+  ruleset=💾 网盘存储,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+  ruleset=🛒 海淘购物,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Amazon.list
+  ruleset=🍵 休闲养生,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Porn.list
+  ruleset=🌍 非中国,[]GEOIP,!CN
+  ruleset=🐟 漏网之鱼,[]FINAL
+
+
+  ; ===================================================================
+  ; 2. 策略组定义 (Proxy Groups) - 公司版手动选择架构
+  ; ===================================================================
+
+  ; ---------------------------------------------------
+  ; [底层] 节点筛选与手动选择
+  ; ---------------------------------------------------
+  custom_proxy_group=🇺🇸 US`select`(?i)(US|United States|美|America)
+  custom_proxy_group=🐸 青蛙`select`(?i)FL-frog
+  custom_proxy_group=🧩 速度`select`^(?!(?i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*
+  custom_proxy_group=🧩 Clean`select`^(?!(?i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*(?i)(US|
+  United States|美|America)`[]DIRECT`[]REJECT
+  custom_proxy_group=⚡ CF手动`select`^(?i)cf -
+
+  ; ---------------------------------------------------
+  ; [中层] 业务逻辑与全局主控
+  ; ---------------------------------------------------
+  custom_proxy_group=⚡ 流量手动`select`[]⚡ CF手动`[]🐸 青蛙`[]🧩 速度`[]🇺🇸 US
+  custom_proxy_group=🛜 流量`select`[]⚡ 流量手动`[]⚡ CF手动`[]🐸 青蛙`[]🧩 速度`[]🇺🇸 US
+  custom_proxy_group=⚡ 手动候选`select`^(?!(?i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*
+  custom_proxy_group=🎯 自定路由`select`[]🚀 节点选择`[]🇺🇸 US`[]🧩 速度`[]DIRECT`[]REJECT
+  custom_proxy_group=🚀 节点选择`select`[]🇺🇸 US`[]⚡ 手动候选`[]🧩 速度`[]🛜 流量`[]🧩 Clean`[]DIRECT`[]REJECT`^(?!(?
+  i)cf - |.*(?:官网|到期|剩余|Game|Traffic|重置|备用|0\.|网站|地址)).*
+
+  ; ---------------------------------------------------
+  ; [顶层] 应用规则路由
+  ; 基础顺序：节点选择 -> US -> 手动候选 -> 流量 -> 速度 -> Clean -> 备用直连
+  ; ---------------------------------------------------
+  custom_proxy_group=🛑 广告拦截`select`[]REJECT`[]DIRECT
+
+  ; --- 海外核心与 AI 服务 ---
+  custom_proxy_group=✨ Gemini`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
+  custom_proxy_group=🤖 AI 服务`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
+  custom_proxy_group=Ⓜ️ 微软服务`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT
+  custom_proxy_group=🔍 谷歌服务`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT
+  custom_proxy_group=📹 油管视频`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
+  custom_proxy_group=☁️ 云服务`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT
+
+  ; --- 社交与通讯 ---
+  custom_proxy_group=📲 电报消息`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
+  custom_proxy_group=🐦 推特/X`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
+  custom_proxy_group=💬 其他社交`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
+
+  ; --- 下载与开发环境 (保留 DIRECT 兼容) ---
+  custom_proxy_group=🛠️ 开发工具`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT
+  custom_proxy_group=💾 网盘存储`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT
+  custom_proxy_group=🛒 海淘购物`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT
+  custom_proxy_group=🍵 休闲养生`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT
+
+  ; --- 本地化服务与游戏 ---
+  custom_proxy_group=🎮 Steam`select`[]DIRECT`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
+  custom_proxy_group=🖥️ PC 游戏`select`[]DIRECT`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
+  custom_proxy_group=🏠 私有网络`select`[]DIRECT`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩
+  Clean`[]REJECT
+  custom_proxy_group=🔒 国内服务`select`[]DIRECT`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean
+
+  ; --- 兜底规则 ---
+  custom_proxy_group=🌍 非中国`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩 Clean`[]DIRECT
+  custom_proxy_group=🐟 漏网之鱼`select`[]🚀 节点选择`[]🇺🇸 US`[]⚡ 手动候选`[]🛜 流量`[]🧩 速度`[]🧩
+  Clean`[]DIRECT`[]REJECT
+
+  ; --- 转换器核心指令 ---
+  enable_rule_generator=true
+  overwrite_original_rules=true
